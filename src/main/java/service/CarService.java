@@ -7,7 +7,7 @@ import java.util.ArrayList;
 import java.util.List;
 
 @Service
-public class CarService {
+public class CarService implements CarServiceInterface {
 
     private final List<Car> carList;
 
@@ -20,6 +20,7 @@ public class CarService {
         carList.add(new Car("Nissan", "Altima", 2021));
     }
 
+    @Override
     public List<Car> getCars(int count) {
         if (count >= carList.size() || count <= 0) {
             return carList;
